@@ -1,0 +1,21 @@
+{
+  "name": "commonlog-bunyan",
+  "version": "0.1.0",
+  "description": "Naive common log for bunyan",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cblanc/commonlog-bunyan.git"
+  },
+  "author": "Chris Blanchard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cblanc/commonlog-bunyan/issues"
+  }
+}
