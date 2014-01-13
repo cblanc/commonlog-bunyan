@@ -119,11 +119,4 @@ describe("Writing to log path", function () {
 			log.fatal(testMessage);
 		}, TIMEOUT);
 	});
-
-	
-	
-	
-
-	
-
 });
