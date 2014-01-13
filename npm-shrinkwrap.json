@@ -1,0 +1,48 @@
+{
+  "name": "commonlog-bunyan",
+  "version": "0.1.0",
+  "dependencies": {
+    "bunyan": {
+      "version": "0.22.1",
+      "from": "bunyan@",
+      "dependencies": {
+        "mv": {
+          "version": "0.0.5",
+          "from": "mv@0.0.5"
+        },
+        "dtrace-provider": {
+          "version": "0.2.8",
+          "from": "dtrace-provider@0.2.8"
+        }
+      }
+    },
+    "chai": {
+      "version": "1.8.1",
+      "from": "chai@",
+      "dependencies": {
+        "assertion-error": {
+          "version": "1.0.0",
+          "from": "assertion-error@1.0.0"
+        },
+        "deep-eql": {
+          "version": "0.1.3",
+          "from": "deep-eql@0.1.3",
+          "dependencies": {
+            "type-detect": {
+              "version": "0.1.1",
+              "from": "type-detect@0.1.1"
+            }
+          }
+        }
+      }
+    },
+    "randomstring": {
+      "version": "1.0.2",
+      "from": "randomstring@"
+    },
+    "tail": {
+      "version": "0.3.5",
+      "from": "tail@"
+    }
+  }
+}
