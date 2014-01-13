@@ -1,9 +1,9 @@
 var bunyan = require("bunyan"),
-		logger;
+		Logger = {
+			logger: null,
+			init: function (config) {
+				this.logger = new bunyan.createLogger(config);
+			}
+		}
 
-module.exports = function (config) {
-	if (!logger && config) {
-		logger = new bunyan.createLogger(config);
-	}
-	return logger;
-}
+module.exports = Logger;

@@ -13,8 +13,10 @@ var logPath = path.join(__dirname, "logs/test.log");
 				path: logPath,
 				level: "trace"
 			}]
-		},
-		log = require("../index.js")(config);
+		};
+
+require("../index.js").init(config);
+var log = require("../index.js").logger;
 
 // Helper method
 var emptyLog = function (callback) {
