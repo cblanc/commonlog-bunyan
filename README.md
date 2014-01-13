@@ -8,14 +8,14 @@ Getting my head around Bunyan. Relies on module caching to retrieve the same ins
 
 ```
 var bunyan = require("bunyan"),
-		logger;
+		Logger = {
+			logger: null,
+			init: function (config) {
+				this.logger = new bunyan.createLogger(config);
+			}
+		}
 
-module.exports = function (config) {
-	if (!logger && config) {
-		logger = new bunyan.createLogger(config);
-	}
-	return logger;
-}
+module.exports = Logger;
 ```
 
 ## To avoid this...
