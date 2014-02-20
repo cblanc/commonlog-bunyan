@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "bunyan": "~0.22.1",
-    "chai": "~1.8.1",
+    "chai": "~1.9.0",
     "randomstring": "~1.0.2",
     "tail": "~0.3.5"
   },

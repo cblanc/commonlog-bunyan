@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/cblanc/commonlog-bunyan.png)](https://travis-ci.org/cblanc/commonlog-bunyan)
+[![Dependency Status](https://gemnasium.com/cblanc/commonlog-bunyan.png)](https://gemnasium.com/cblanc/commonlog-bunyan)
 
 # Naive Common Log for Bunyan
 
