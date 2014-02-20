@@ -3,7 +3,8 @@ var assert = require("chai").assert,
 		fs = require("fs"),
 		Tail = require("tail").Tail,
 		randomstring = require("randomstring"),
-		TIMEOUT = 100;
+		TIMEOUT = 100,
+		time;
 
 // Configure Logger
 var logPath = path.join(__dirname, "logs/test.log");
@@ -16,7 +17,9 @@ var logPath = path.join(__dirname, "logs/test.log");
 		};
 
 require("../index.js").init(config);
-var log = require("../index.js").logger;
+var commonlog = require("../index.js"),
+		log = commonlog.logger,
+		logTime = commonlog.logTime;
 
 // Helper method
 var emptyLog = function (callback) {
@@ -121,4 +124,22 @@ describe("Writing to log path", function () {
 			log.fatal(testMessage);
 		}, TIMEOUT);
 	});
+
+	it ("should log time", function (done) {
+		time = process.hrtime();
+		tail = new Tail(logPath);
+		tail.on("line", function (data) {
+			var logLine = JSON.parse(data);
+			assert.equal(logLine.level, 20);
+			assert.equal(logLine.message, testMessage);
+			assert.equal(logLine.secondMessage, testMessage);
+			assert.isNumber(logLine.time);
+			done();
+		});
+		setTimeout(function () {
+			logTime(time, {message: testMessage, secondMessage: testMessage});
+		}, TIMEOUT);
+	});
 });
+
+

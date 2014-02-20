@@ -8,12 +8,19 @@ Getting my head around Bunyan. Relies on module caching to retrieve the same ins
 
 ```
 var bunyan = require("bunyan"),
-		Logger = {
-			logger: null,
-			init: function (config) {
-				this.logger = new bunyan.createLogger(config);
-			}
-		}
+		Logger = {};
+
+Logger.logger = null;
+
+Logger.init =  function (config) {
+	Logger.logger = new bunyan.createLogger(config);
+};
+
+Logger.logTime = function (t, message) {
+	message = message || {};
+	message.time = process.hrtime(t)[1] / 1000000;
+	Logger.logger.debug(message);
+}
 
 module.exports = Logger;
 ```
@@ -28,6 +35,10 @@ logger = require("../../lib/logger");
 logger = require("../../../lib/logger");
 ...
 ```
+
+## Other things
+
+Added a convenience method to log time given an instance of process.hrtime
 
 ## License
 
