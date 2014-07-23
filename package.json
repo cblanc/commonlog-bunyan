@@ -1,19 +1,19 @@
 {
   "name": "commonlog-bunyan",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Naive common log for bunyan",
   "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "dependencies": {
-    "bunyan": "~0.22.1",
+    "bunyan": "~0.23.1",
     "chai": "~1.9.0",
     "randomstring": "~1.0.2",
     "tail": "~0.3.5"
   },
   "devDependencies": {
-    "mocha": "~1.17.0"
+    "mocha": "~1.20.0"
   },
   "scripts": {
     "test": "mocha tests/"
