@@ -1,6 +1,6 @@
 {
   "name": "commonlog-bunyan",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Naive common log for bunyan",
   "main": "index.js",
   "directories": {

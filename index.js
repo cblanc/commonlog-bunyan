@@ -1,7 +1,12 @@
 var bunyan = require("bunyan"),
 		Logger = {};
 
-Logger.logger = null;
+Logger.logger = {
+	info: console.info,
+	debug: console.info,
+	error: console.error,
+	warn: console.warn
+};
 
 Logger.init =  function (config) {
 	Logger.logger = new bunyan.createLogger(config);
